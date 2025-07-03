@@ -1,21 +1,58 @@
 import { Route, Routes } from "react-router-dom";
 
 import IndexPage from "@/pages/index";
-import HobbiesPage from "@/pages/Hobbies";
-import PricingPage from "@/pages/pricing";
+import ProjectsPage from "@/pages/Projects";
+import ExperiencePage from "@/pages/Experience";
 import BlogPage from "@/pages/blog";
 import AboutPage from "@/pages/about";
-import { Tabs, Tab,} from "@heroui/react";
+import AnimatedRoute from "@/components/AnimatedRoute";
 
 function App() {
   return (
-    <Routes>
-      <Route element={<IndexPage />} path="/" />
-      <Route element={<HobbiesPage />} path="/Hobbies" />
-      <Route element={<PricingPage />} path="/pricing" />
-      <Route element={<BlogPage />} path="/blog" />
-      <Route element={<AboutPage />} path="/about" />
-    </Routes>
+    <div style={{ position: "relative", width: "100%", height: "100vh", overflow: "hidden"}}>
+      <Routes>
+        <Route 
+          element={
+            <AnimatedRoute>
+              <IndexPage />
+            </AnimatedRoute>
+          } 
+          path="/" 
+        />
+        <Route 
+          element={
+            <AnimatedRoute>
+              <ProjectsPage />
+            </AnimatedRoute>
+          } 
+          path="/Projects" 
+        />
+        <Route 
+          element={
+            <AnimatedRoute>
+              <ExperiencePage />
+            </AnimatedRoute>
+          } 
+          path="/Experience" 
+        />
+        <Route 
+          element={
+            <AnimatedRoute>
+              <BlogPage />
+            </AnimatedRoute>
+          } 
+          path="/blog" 
+        />
+        <Route 
+          element={
+            <AnimatedRoute>
+              <AboutPage />
+            </AnimatedRoute>
+          } 
+          path="/about" 
+        />
+      </Routes>
+    </div>
   );
 }
 

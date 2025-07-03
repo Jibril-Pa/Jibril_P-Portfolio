@@ -9,12 +9,12 @@ export const siteConfig = {
       href: "/",
     },
     {
-      label: "Hobbies",
-      href: "/Hobbies",
+      label: "Projects",
+      href: "/Projects",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "Experience",
+      href: "/Experience",
     },
     {
       label: "Blog",
@@ -60,10 +60,8 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/frontio-ai/heroui",
-    twitter: "https://twitter.com/hero_ui",
-    docs: "https://heroui.com",
+    github: "https://github.com/Jibril-Pa",
+    LinkedIn: "https://www.linkedin.com/in/jibril-p/",
     discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
   },
 };
