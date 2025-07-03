@@ -1,13 +1,9 @@
 import { Button } from "@heroui/button";
-import { Link } from "@heroui/link";
 import {
   Navbar as HeroUINavbar,
   NavbarBrand,
   NavbarContent,
-  NavbarItem,
-  NavbarMenuToggle,
 } from "@heroui/navbar";
-import { link as linkStyles } from "@heroui/theme";
 import clsx from "clsx";
 import { useLocation, useNavigate } from "react-router-dom";
 
