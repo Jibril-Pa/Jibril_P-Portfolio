@@ -6,11 +6,13 @@ export default function DocsPage() {
     <DefaultLayout>
       <div className="parent">
         {/* FormSpree */}
-        <div className="div1">1</div>
+        <div className="div1">
+          Hello
+        </div>
         {/* LinkedIn */}
-        <div className="div2">2</div>
+        <div className="div2">Hello</div>
         {/* Email? or Some Other Contact */}
-        <div className="div3">3</div>
+        <div className="div3">Hello</div>
 
       </div>
     </DefaultLayout>
