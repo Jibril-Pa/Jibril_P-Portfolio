@@ -5,7 +5,7 @@ export default function DocsPage() {
   return (
     <DefaultLayout>
       <section className="Section">
-          <iframe  className="Resume" src="src/Assets/JibrilPascua.pdf"></iframe>
+          <iframe className="Resume" src="/JibrilPascua.pdf"></iframe>
       </section>
     </DefaultLayout>
   );
