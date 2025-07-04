@@ -15,7 +15,12 @@ export default function IndexPage() {
         <div>  <h1 className={title()}>Hello, I'm <span className="text-primary">Jibril Pascua.</span></h1>
           <p className={subtitle()}>Im a student at the University of Texas at San Antonio.</p>
           <p className={subtitle()}>I am currently a senior studying Computer Science. With a focus on Cybersecurity.</p>
-          <p className={subtitle()}>Im a student at the University of Texas at San Antonio.</p></div>
+          <p className={subtitle()}>Im a student at the University of Texas at San Antonio.</p>
+          <p className={subtitle()}>Im a student at the University of Texas at San Antonio.</p>
+          <p className={subtitle()}>Im a student at the University of Texas at San Antonio.</p>
+          <p className={subtitle()}>Im a student at the University of Texas at San Antonio.</p>
+            
+          </div>
           <div className="flex flex-row gap-4">
             <img src={acm} width={100} height={100} />
             <img src={cic} width={100} height={100} />
