@@ -1,0 +1,19 @@
+.Resume {
+    width: 100vw;
+    height: 85vh;
+    position: fixed;
+    top: 65px;
+    left: 0;
+    border: none;
+}
+
+.Section {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 75vh;
+    position: fixed;
+    margin-top: 100px;
+    left: 0;
+    z-index: 10;
+}
