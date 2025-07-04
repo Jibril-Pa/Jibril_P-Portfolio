@@ -11,6 +11,8 @@ import clsx from "clsx";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+import favicon from "/favicon.ico";
+
 import { siteConfig } from "@/config/site";
 
 
@@ -23,7 +25,9 @@ export const Navbar = () => {
     <HeroUINavbar maxWidth="xl" position="sticky" className="bg-gray-900 text-primary-foreground">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="center">
         <NavbarBrand className="gap-3 max-w-fit">
-          <span className="font-bold text-inherit">JP</span>
+          <span className="font-bold text-inherit">
+            <img src={favicon} alt="favicon" width={30} height={30} />
+          </span>
         </NavbarBrand>
         <div className="hidden lg:flex gap-1">
           {siteConfig.navItems.map((item) => {

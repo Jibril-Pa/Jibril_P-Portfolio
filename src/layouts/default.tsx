@@ -4,7 +4,7 @@ import { Navbar } from "@/components/navbar";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 
-import { AiFillLinkedin, AiFillGithub, AiFillDiscord} from "react-icons/ai";
+import { AiFillLinkedin, AiFillGithub} from "react-icons/ai";
 export default function DefaultLayout({
   children,
 }: {
@@ -20,9 +20,6 @@ export default function DefaultLayout({
           <Link isExternal href={siteConfig.links.LinkedIn} title="LinkedIn">
             <AiFillLinkedin className="text-default-500 w-10 h-10" />
           </Link>
-          <Link isExternal href={siteConfig.links.discord} title="Discord">
-            <AiFillDiscord className="text-default-500 w-10 h-10" />
-        </Link>
           <Link isExternal href={siteConfig.links.github}>
             <AiFillGithub className="text-default-500 w-10 h-10" />
           </Link>

@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import IndexPage from "@/pages/index";
 import ProjectsPage from "@/pages/Projects";
 import ExperiencePage from "@/pages/Experience";
-import BlogPage from "@/pages/blog";
+import BlogPage from "@/pages/Resume";
 import AboutPage from "@/pages/about";
 import AnimatedRoute from "@/components/AnimatedRoute";
 
@@ -41,7 +41,7 @@ function App() {
               <BlogPage />
             </AnimatedRoute>
           } 
-          path="/blog" 
+          path="/Resume" 
         />
         <Route 
           element={
