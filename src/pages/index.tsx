@@ -17,35 +17,40 @@ export default function IndexPage() {
       <div className="parent">
         <div className="div1">
           <div>
-          <h1 className={title()}>Hello, I'm <span className="text-primary">Jibril Pascua.</span></h1>
+          <h1 className={title()}>Hello, I'm <span className="text-blue-500">Jibril Pascua.</span></h1>
           <p className={subtitle()}>Im a student at the University of Texas at San Antonio.</p>
             <p className={subtitle()}>I am currently a senior studying Computer Science. With a focus on Cybersecurity.</p>
           </div>
           <div className="carousel_div">
             <Carousel autoSlide={true} autoSlideInterval={4000}>
-              <div className="w-full h-96 flex-shrink-0 rounded-3xl">
-                <img src={acm} alt="ACM UTSA" className="w-full h-full object-cover" />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <div className="w-full h-96 flex-shrink-0 ">
+                <img src="/carousel_images/cic-rt.jpeg" alt="Coding in Color team at Retreat" className="w-full h-full object-cover" />
+                <div className="absolute bottom-0 left-0 right-0 ">
                 </div>
               </div>
               <div className="w-full h-96 flex-shrink-0">
-                <img src={cic} alt="CIC" className="w-full h-full object-cover" />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <img src="/carousel_images/rhix.JPG" alt="Rhix" className="w-full h-full object-cover" />
+                <div className="absolute bottom-0 left-0 right-0 ">
                 </div>
               </div>
               <div className="w-full h-96 flex-shrink-0">
-                <img src={rh_white} alt="Red Hat" className="w-full h-full object-cover" />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <img src="/carousel_images/voices.jpeg" alt="Voices Banquet" className="w-full h-full object-cover" />
+                <div className="absolute bottom-0 left-0 right-0 ">
                 </div>
               </div>
               <div className="w-full h-96 flex-shrink-0">
-                <img src={voices} alt="Voices" className="w-full h-full object-cover" />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <img src="/carousel_images/acm-rt.jpg" alt="ACM" className="w-full h-full object-cover object-bottom" />
+                <div className="absolute bottom-0 left-0 right-0 ">
                 </div>
               </div>
               <div className="w-full h-96 flex-shrink-0">
-                <img src={epic} alt="Epic" className="w-full h-full object-cover" />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <img src="/carousel_images/acm-bf.JPG" alt="Best Fest" className="w-full h-full object-cover object-bottom" />
+                <div className="absolute bottom-0 left-0 right-0 ">
+                </div>
+              </div>
+              <div className="w-full h-96 flex-shrink-0">
+                <img src="/carousel_images/epic-move.jpg" alt="Rhix" className="w-full h-full object-cover" />
+                <div className="absolute bottom-0 left-0 right-0 ">
                 </div>
               </div>
             </Carousel>
