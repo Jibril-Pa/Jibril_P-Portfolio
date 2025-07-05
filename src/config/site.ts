@@ -10,7 +10,7 @@ export const siteConfig = {
     },
     {
       label: "Projects",
-      href: "/Assets/JibrilPascua.pdf",
+      href: "/Projects",
     },
     {
       label: "Experience",

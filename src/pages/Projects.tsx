@@ -1,9 +1,9 @@
 import DefaultLayout from "@/layouts/default";
+import "@/styles/projects.css";
 
 export default function DocsPage() {
   return (
     <DefaultLayout>
-      <div className="parent">
         <div className="div1">1</div>
         <div className="div2">2</div>
         <div className="div3">3</div>
@@ -12,7 +12,6 @@ export default function DocsPage() {
         <div className="div6">6</div>
         <div className="div7">7</div>
         <div className="div8">8</div>
-      </div>
     </DefaultLayout>
   );
 }

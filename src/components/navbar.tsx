@@ -26,6 +26,7 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="center">
         <NavbarBrand className="gap-3 max-w-fit">
           <span className="font-bold text-inherit">
+            <div className="flex items-center gap-2"></div>
             <img src={favicon} alt="favicon" width={30} height={30} />
           </span>
         </NavbarBrand>
