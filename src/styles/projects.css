@@ -1,0 +1,143 @@
+.projects-page .top {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    height: 50%;
+    margin-bottom: 16px;
+}
+
+.projects-page .Title {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    padding: 16px 0;
+}
+
+.projects-page .Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.projects-page .Photo {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin: 8px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.projects-page .Github {
+    padding: 16px;
+    text-align: center;
+}
+
+.projects-page .Github a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.projects-page .Github a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.projects-page .div1 {
+    width: 25%;
+    height: 100%;
+    background-color: #1b4b9a;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-page .div2 {
+    width: 25%;
+    height: 100%;
+    background-color: #042456;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-page .div3 {
+    width: 25%;
+    height: 100%;
+    background-color: #296fe0;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-page .div4 {
+    width: 25%;
+    height: 100%;
+    background-color: #18202d;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-page .div5 {
+    width: 25%;
+    height: 100%;
+    background-color: #172439;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-page .div6 {
+    width: 25%;
+    height: 100%;
+    background-color: #586983;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-page .div7 {
+    width: 25%;
+    height: 100%;
+    background-color: #123279;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-page .div8 {
+    width: 25%;
+    height: 100%;
+    background-color: #5f7dae;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-page .bottom {
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}

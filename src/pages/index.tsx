@@ -14,7 +14,7 @@ import Carousel from "@/components/Carousel";
 export default function IndexPage() {
   return (
     <DefaultLayout>
-      <div className="parent">
+      <div className="index-page parent">
         <div className="div1">
           <div>
           <h1 className={title()}>Hello, I'm <span className="text-blue-500">Jibril Pascua.</span></h1>
