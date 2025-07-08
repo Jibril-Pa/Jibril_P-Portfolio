@@ -3,6 +3,7 @@ import "@/styles/projects.css";
 import { Image } from "@heroui/react";
 import QuickMaths from "@/Photos/QuickMaths.png";
 import Kithub from "@/Photos/kithub.png";
+import CreditConfidence from "@/Photos/CC-prj.png";
 
 export default function projectsPage() {
   return (
@@ -14,38 +15,40 @@ export default function projectsPage() {
             <div className="Photo">
               <Image src={Kithub} alt="Kithub" />
             </div>
-            <div className="Github">
-              <a href="https://github.com/JibrilPascua/Projects">View on Github</a>
+            <div className="Description">
+             
             </div>
           </div>
           <div className="div2">
             <div className="Title">Heat of the Beat</div>
-            <div className="Photo">Photo</div>
-            <div className="Github">
-              <a href="https://github.com/JibrilPascua/Projects">View on Github</a>
+            <div className="Photo"></div>
+            <div className="Description">
+             
             </div>
           </div>
           <div className="div3">
             <div className="Title">Squid Game Clone</div>
             <div className="Photo">Photo</div>
-            <div className="Github">
-              <a href="https://github.com/JibrilPascua/Projects">View on Github</a>
+            <div className="Description">
+             
             </div>
           </div>
           <div className="div4">
             <div className="Title">Byteswap</div>
             <div className="Photo">Photo</div>
-            <div className="Github">
-              <a href="https://github.com/JibrilPascua/Projects">View on Github</a>
+            <div className="Description">
+             
             </div>
           </div>
         </div>
         <div className="bottom">
           <div className="div5">
             <div className="Title">Credit Confidence</div>
-            <div className="Photo">Photo</div>
-            <div className="Github">
-              <a href="https://github.com/JibrilPascua/Projects">View on Github</a>
+            <div className="Photo">
+              <Image src={CreditConfidence} alt="Credit Confidence" />
+            </div>
+            <div className="Description">
+             
             </div>
           </div>
           <div className="div6">
@@ -53,22 +56,22 @@ export default function projectsPage() {
             <div className="Photo">
               <Image src={QuickMaths} alt="Kithub" />
             </div>
-            <div className="Github">
-              <a href="https://github.com/JibrilPascua/Projects">View on Github</a>
+            <div className="Description">
+             
             </div>
           </div>
           <div className="div7">
             <div className="Title">More Coming Soon</div>
             <div className="Photo">Photo</div>
-            <div className="Github">
-              <a href="https://github.com/JibrilPascua/Projects">View on Github</a>
+            <div className="Description">
+             
             </div>
           </div>
           <div className="div8">
             <div className="Title">More Coming Soon</div>
             <div className="Photo">Photo</div>
-            <div className="Github">
-              <a href="https://github.com/JibrilPascua/Projects">View on Github</a>
+            <div className="Description">
+             
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@
     gap: 16px;
     height: 50%;
     margin-bottom: 16px;
+    
 }
 
 .projects-page .Title {
@@ -13,7 +14,7 @@
     font-size: 24px;
     font-weight: bold;
     color: #fff;
-    padding: 16px 0;
+    
 }
 
 .projects-page .Image {
@@ -23,11 +24,16 @@
     border-radius: 8px;
 }
 
+.projects-page .Photo :hover{
+    opacity: 50%;
+    content: "View On Github!";
+}
+
 .projects-page .Photo {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 200px;
+    height: 150px;
     display: flex;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
