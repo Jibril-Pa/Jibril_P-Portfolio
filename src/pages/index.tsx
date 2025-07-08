@@ -54,7 +54,6 @@ export default function IndexPage() {
                 </div>
               </div>
             </Carousel>
-            {/* Add An Image representing different suborges */}
             
           </div>
           <div className="photos_div">

@@ -42,23 +42,12 @@
     position: relative;
 }
 
-.projects-page .Github {
-    padding: 16px;
+.projects-page .Description {
     text-align: center;
-}
-
-.projects-page .Github a {
+    font-size: 20px;
     color: #fff;
-    text-decoration: none;
-    padding: 8px 16px;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
 }
 
-.projects-page .Github a:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-}
 
 .projects-page .div1 {
     width: 25%;
