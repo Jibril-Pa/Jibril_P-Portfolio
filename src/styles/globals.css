@@ -64,5 +64,54 @@
   }
   body {
     @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+  
+  /* Single page layout styles */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  section {
+    scroll-margin-top: 80px; /* Account for sticky navbar */
+  }
+  
+  /* Prevent content bleeding into footer */
+  main {
+    min-height: calc(100vh - 80px - 60px); /* viewport height - navbar - footer */
+    padding-bottom: 80px; /* Extra padding to ensure content doesn't touch footer */
+  }
+  
+  /* Ensure footer stays at bottom */
+  footer {
+    margin-top: auto; /* Push footer to bottom */
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    background-color: hsl(var(--background));
+    border-top: 1px solid hsl(var(--border));
+  }
+  
+  /* Container for pages with footer */
+  .page-with-footer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .page-with-footer main {
+    flex: 1;
+    padding-bottom: 20px; /* Space before footer */
+  }
+  
+  /* For pages without footer (like Resume) */
+  .page-without-footer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .page-without-footer main {
+    flex: 1;
   }
 }

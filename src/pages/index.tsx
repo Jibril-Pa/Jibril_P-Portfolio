@@ -14,12 +14,12 @@ import Carousel from "@/components/Carousel";
 export default function IndexPage() {
   return (
     <DefaultLayout>
-      <div className="index-page parent">
+      <div className="index-page parent flex flex-row ">
         <div className="div1">
           <div>
-          <h1 className={title()}>Hello, I'm <span className="text-blue-500">Jibril Pascua.</span></h1>
-          <p className={subtitle()}>Im a student at the University of Texas at San Antonio.</p>
-            <p className={subtitle()}>I am currently a senior studying Computer Science. With a focus on Cybersecurity.</p>
+          <h1 className={title()}>Hello, I'm <span className="text-blue-500">Jibril Pascua!</span></h1>
+            <p className={subtitle()}>I am currently a Senior studying Computer Science with a focus on Cybersecurity.</p>
+            <p className={subtitle()}>I am affiliated with many organizations at UTSA, the most notable being The Association of Computing Machinery, Coding In Color, and Voices Volunteering.</p>
           </div>
           <div className="carousel_div">
             <Carousel autoSlide={true} autoSlideInterval={4000}>

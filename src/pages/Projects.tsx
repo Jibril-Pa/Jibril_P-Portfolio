@@ -14,9 +14,9 @@ import Byteswap from "@/Photos/byteswap.png";
 
 export default function projectsPage() {
   return (
-    <div className="relative flex flex-col h-screen">
+    <div className="page-with-footer">
       <Navbar />
-      <main className="container mx-auto max-w-7xl px-6 flex-grow pt-16">
+      <main className="container mx-auto max-w-7xl px-6 pt-10">
         <div className="projects-page">
           <div className="top">
             <div className="div1">
@@ -118,7 +118,7 @@ export default function projectsPage() {
           </div>
         </div>
       </main>
-      <footer className="w-full flex items-center justify-center py-3 sticky bottom-0">
+      <footer className="w-full flex items-center justify-center py-3">
           <Link isExternal href={siteConfig.links.LinkedIn} title="LinkedIn">
             <AiFillLinkedin className="text-default-500 w-10 h-10" />
           </Link>
