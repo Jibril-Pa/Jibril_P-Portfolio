@@ -8,10 +8,7 @@ export default function ExperiencePage() {
         <div className="inline-block max-w-lg text-center justify-center">
           <h1 className={title()}>Work Experience</h1>
         </div>
-        
-        {/* Work Experience Items */}
         <div className="w-full max-w-4xl space-y-8">
-          {/* Experience Item 1 */}
           <div className="bg-card p-6 rounded-lg shadow-md border">
             <div className="flex justify-between items-start mb-4">
               <div>

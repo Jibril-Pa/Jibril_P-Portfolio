@@ -5,6 +5,7 @@ import ProjectsPage from "@/pages/Projects";
 import ExperiencePage from "@/pages/Experience";
 import BlogPage from "@/pages/Resume";
 import AboutPage from "@/pages/about";
+import OrganizationsPage from "@/pages/organizations";
 import AnimatedRoute from "@/components/AnimatedRoute";
 
 function App() {
@@ -50,6 +51,14 @@ function App() {
             </AnimatedRoute>
           } 
           path="/about" 
+        />
+        <Route 
+          element={
+            <AnimatedRoute>
+              <OrganizationsPage />
+            </AnimatedRoute>
+          } 
+          path="/Organizations" 
         />
       </Routes>
     </div>
