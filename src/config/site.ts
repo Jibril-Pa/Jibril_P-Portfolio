@@ -17,6 +17,10 @@ export const siteConfig = {
       href: "/Experience",
     },
     {
+      label: "Organizations",
+      href: "/Organizations",
+    },
+    {
       label: "Resume",
       href: "/Resume",
     },
@@ -24,6 +28,7 @@ export const siteConfig = {
       label: "About",
       href: "/about",
     },
+
   ],
   links: {
     github: "https://github.com/Jibril-Pa",
