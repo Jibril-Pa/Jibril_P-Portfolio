@@ -7,6 +7,7 @@ import BlogPage from "@/pages/Resume";
 import AboutPage from "@/pages/about";
 import OrganizationsPage from "@/pages/organizations";
 import AnimatedRoute from "@/components/AnimatedRoute";
+import GetOnPage from "@/pages/get-on";
 
 function App() {
   return (
@@ -59,6 +60,14 @@ function App() {
             </AnimatedRoute>
           } 
           path="/Organizations" 
+        />
+        <Route 
+          element={
+            <AnimatedRoute>
+              <GetOnPage />
+            </AnimatedRoute>
+          } 
+          path="/get-on" 
         />
       </Routes>
     </div>
