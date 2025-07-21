@@ -14,7 +14,7 @@
 .index-page .div2 {
     width: 40%;
     height: 80%;
-    border-radius: 20px;
+    border-radius: 20dvh;
     padding-left: 75px;
     justify-content: center;
 }
@@ -27,7 +27,7 @@
     justify-content: center;
     margin-top: auto;
     background-color: #172439;
-    border-radius: 20px;
+    border-radius: 20dvh;
 }
 
 .index-page .div1 .photos_div {
