@@ -2,11 +2,6 @@ import { Image } from "@heroui/react";
 import "@/styles/index.css";
 import DefaultLayout from "@/layouts/default";
 import Jibril from "/assets/Jibril-P.jpg";
-import acm from "/assets/acmutsa.png";
-import cic from "/assets/cic.png";
-import rh_white from "/assets/rh_white.png";
-import voices from "/assets/voices.png";
-import epic from "/assets/epic.png";
 import { title, subtitle } from "@/components/primitives";
 import Carousel from "@/components/Carousel";
 
@@ -57,13 +52,13 @@ export default function IndexPage() {
             
           </div>
           <div className="photos_div">
-            <img src={acm} width={100} height={100} />
+            <img src="/assets/acmutsa.png" width={100} height={100} />
             {/* Fix this for themSwitch */}
-            <img src={cic} width={100} height={100} />
+            <img src="/assets/cic.png" width={100} height={100} />
             {/* Fix this for Theme Switch */}
-            <img src={rh_white} width={100} height={100} />
-            <img src={voices} width={100} height={100} />
-            <img src={epic} width={150} height={100} />
+            <img src="/assets/rh_white.png" width={100} height={100} />
+            <img src="/assets/voices.png" width={100} height={100} />
+            <img src="/assets/epic.png" width={150} height={100} />
           </div>
         </div>
         <div className="div2">
