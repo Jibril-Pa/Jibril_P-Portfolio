@@ -1,5 +1,4 @@
 export type SiteConfig = typeof siteConfig;
-import { ThemeSwitch } from "@/components/theme-switch";
 
 export const siteConfig = {
   name: "Jibril Pascua",
