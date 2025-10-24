@@ -5,12 +5,12 @@ import { siteConfig } from "@/config/site";
 import { AiFillLinkedin, AiFillGithub} from "react-icons/ai";
 import "@/styles/projects.css";
 import { Image } from "@heroui/react";
-import QuickMaths from "@/Photos/QuickMaths.png";
-import Kithub from "@/Photos/kithub.png";
-import CreditConfidence from "@/Photos/CC-prj.png";
-import HeatOfTheBeat from "@/Photos/hotb.png";
-import SquidGame from "@/Photos/squidgame.png";
-import Byteswap from "@/Photos/byteswap.png";
+import QuickMaths from "/assets/QuickMaths.png";
+import Kithub from "/assets/kithub.png";
+import CreditConfidence from "/assets/CC-prj.png";
+import HeatOfTheBeat from "/assets/hotb.png";
+import SquidGame from "/assets/squidgame.png";
+import Byteswap from "/assets/byteswap.png";
 
 export default function projectsPage() {
   return (

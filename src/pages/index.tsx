@@ -1,12 +1,12 @@
 import { Image } from "@heroui/react";
 import "@/styles/index.css";
 import DefaultLayout from "@/layouts/default";
-import Jibril from "@/Photos/Jibril-P.jpg";
-import acm from "@/Photos/acmutsa.png";
-import cic from "@/Photos/cic.png";
-import rh_white from "@/Photos/rh_white.png";
-import voices from "@/Photos/voices.png";
-import epic from "@/Photos/epic.png";
+import Jibril from "/assets/Jibril-P.jpg";
+import acm from "/assets/acmutsa.png";
+import cic from "/assets/cic.png";
+import rh_white from "/assets/rh_white.png";
+import voices from "/assets/voices.png";
+import epic from "/assets/epic.png";
 import { title, subtitle } from "@/components/primitives";
 import Carousel from "@/components/Carousel";
 
@@ -24,32 +24,32 @@ export default function IndexPage() {
           <div className="carousel_div">
             <Carousel autoSlide={true} autoSlideInterval={4000}>
               <div className="w-full h-96 flex-shrink-0 ">
-                <img src="/carousel_images/cic-rt.jpeg" alt="Coding in Color team at Retreat" className="w-full h-full object-cover" />
+                <img src="/assets/cic-rt.jpeg" alt="Coding in Color team at Retreat" className="w-full h-full object-cover" />
                 <div className="absolute bottom-0 left-0 right-0 ">
                 </div>
               </div>
               <div className="w-full h-96 flex-shrink-0">
-                <img src="/carousel_images/rhix.JPG" alt="Rhix" className="w-full h-full object-cover" />
+                <img src="/assets/rhix.JPG" alt="Rhix" className="w-full h-full object-cover" />
                 <div className="absolute bottom-0 left-0 right-0 ">
                 </div>
               </div>
               <div className="w-full h-96 flex-shrink-0">
-                <img src="/carousel_images/voices.jpeg" alt="Voices Banquet" className="w-full h-full object-cover" />
+                <img src="/assets/voices.jpeg" alt="Voices Banquet" className="w-full h-full object-cover" />
                 <div className="absolute bottom-0 left-0 right-0 ">
                 </div>
               </div>
               <div className="w-full h-96 flex-shrink-0">
-                <img src="/carousel_images/acm-rt.jpg" alt="ACM" className="w-full h-full object-cover object-bottom" />
+                <img src="/assets/acm-rt.jpg" alt="ACM" className="w-full h-full object-cover object-bottom" />
                 <div className="absolute bottom-0 left-0 right-0 ">
                 </div>
               </div>
               <div className="w-full h-96 flex-shrink-0">
-                <img src="/carousel_images/acm-bf.JPG" alt="Best Fest" className="w-full h-full object-cover object-bottom" />
+                <img src="/assets/acm-bf.JPG" alt="Best Fest" className="w-full h-full object-cover object-bottom" />
                 <div className="absolute bottom-0 left-0 right-0 ">
                 </div>
               </div>
               <div className="w-full h-96 flex-shrink-0">
-                <img src="/carousel_images/epic-move.jpg" alt="Rhix" className="w-full h-full object-cover" />
+                <img src="/assets/epic-move.jpg" alt="Rhix" className="w-full h-full object-cover" />
                 <div className="absolute bottom-0 left-0 right-0 ">
                 </div>
               </div>

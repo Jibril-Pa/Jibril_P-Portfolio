@@ -10,6 +10,7 @@ import {
 import clsx from "clsx";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { ThemeSwitch } from "@/components/theme-switch";
 
 import favicon from "/favicon.ico";
 
@@ -80,8 +81,12 @@ export const Navbar = () => {
                 }}
               >
                 {item.label}
+                              <ThemeSwitch />
               </Button>
+
+
             </NavbarMenuItem>
+            
           );
         })}
       </NavbarMenu>
