@@ -1,109 +1,96 @@
-import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
+import { motion } from "framer-motion";
+import FadeIn from "@/components/FadeIn";
 
-export default function organizationsPage() {
-    return (
-        <DefaultLayout>
-            <section className="flex flex-col items-center gap-8 py-8 md:pt-2">
-                <div className="inline-block max-w-lg text-center justify-center">
-                    <h1 className={title()}>Leadership Experience/Organizations</h1>
+const organizations = [
+  {
+    title: "Coding In Color Vice President",
+    org: "Suborganization of ACM",
+    date: "May 2024 — Present",
+    accent: "blue",
+  },
+  {
+    title: "RowdyHacks Media/PR Organizer",
+    org: "Central Texas's Largest Hackathon",
+    date: "May 2024 — Present",
+    accent: "purple",
+  },
+  {
+    title: "RowdyCreators PR Officer",
+    org: "Suborganization of ACM",
+    date: "May 2024 — Present",
+    accent: "cyan",
+  },
+  {
+    title: "VOICES Volunteer",
+    org: "Volunteer Organization Involving Community, Education and Service",
+    date: "May 2024 — Present",
+    accent: "emerald",
+  },
+  {
+    title: "EPIC Movement Events Officer",
+    org: "Asian Focused Christian Ministry",
+    date: "May 2024 — Present",
+    accent: "amber",
+  },
+  {
+    title: "ACM Media Junior Officer",
+    org: "The Association for Computing Machinery",
+    date: "May 2024 — Present",
+    accent: "pink",
+  },
+];
+
+const accentColors: Record<string, { text: string; border: string }> = {
+  blue: { text: "text-blue-500", border: "border-l-blue-500" },
+  purple: { text: "text-purple-500", border: "border-l-purple-500" },
+  cyan: { text: "text-cyan-500", border: "border-l-cyan-500" },
+  emerald: { text: "text-emerald-500", border: "border-l-emerald-500" },
+  amber: { text: "text-amber-500", border: "border-l-amber-500" },
+  pink: { text: "text-pink-500", border: "border-l-pink-500" },
+};
+
+export default function OrganizationsPage() {
+  return (
+    <DefaultLayout>
+      <section className="py-8 md:pt-2 max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <h1 className="text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent inline-block">
+            Leadership & Organizations
+          </h1>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Actively leading and contributing to student organizations at UTSA.
+          </p>
+        </motion.div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          {organizations.map((org, i) => {
+            const colors = accentColors[org.accent];
+            return (
+              <FadeIn key={org.title} delay={i * 0.08}>
+                <div
+                  className={`bg-card p-5 rounded-xl border border-l-4 ${colors.border} shadow-sm hover:shadow-md transition-shadow h-full`}
+                >
+                  <h3 className="text-base font-bold text-foreground mb-1">
+                    {org.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-2">
+                    {org.org}
+                  </p>
+                  <span className={`text-xs font-medium ${colors.text}`}>
+                    {org.date}
+                  </span>
                 </div>
-
-                {/* Work Experience Items */}
-                <div className="w-full max-w-4xl space-y-8">
-                    {/* Experience Item 1 */}
-                    <div className="bg-card p-6 rounded-lg shadow-md border">
-                        <div className="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 className="text-xl font-bold text-foreground">Coding In Color Vice President</h3>
-                                <p className="text-muted-foreground">Suborganization of ACM</p>
-                            </div>
-                            <span className="text-sm text-muted-foreground">May 2024 - Current</span>
-                        </div>
-                        <ul className="list-disc list-inside space-y-2 text-foreground">
-                            
-                        </ul>
-                    </div>
-
-                </div>
-                <div className="w-full max-w-4xl space-y-8">
-                    {/* Experience Item 1 */}
-                    <div className="bg-card p-6 rounded-lg shadow-md border">
-                        <div className="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 className="text-xl font-bold text-foreground">RowdyHacks Media/Public Relations Organizer </h3>
-                                <p className="text-muted-foreground">Central Texas's Largest Hackathon</p>
-                            </div>
-                            <span className="text-sm text-muted-foreground">May 2024 - Current</span>
-                        </div>
-                        <ul className="list-disc list-inside space-y-2 text-foreground">
-
-                        </ul>
-                    </div>
-
-                </div>
-                <div className="w-full max-w-4xl space-y-8">
-                    {/* Experience Item 1 */}
-                    <div className="bg-card p-6 rounded-lg shadow-md border">
-                        <div className="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 className="text-xl font-bold text-foreground">RowdyCreators Public Relations Officer</h3>
-                                <p className="text-muted-foreground">Suborganization of ACM</p>
-                            </div>
-                            <span className="text-sm text-muted-foreground">May 2024 - Current</span>
-                        </div>
-                        <ul className="list-disc list-inside space-y-2 text-foreground">
-
-                        </ul>
-                    </div>
-
-                </div>
-                <div className="w-full max-w-4xl space-y-8">
-                    <div className="bg-card p-6 rounded-lg shadow-md border">
-                        <div className="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 className="text-xl font-bold text-foreground">VOICES Volunteer</h3>
-                                <p className="text-muted-foreground">Volunteer Organization Involving Community, Education and Service</p>
-                            </div>
-                            <span className="text-sm text-muted-foreground">May 2024 - Current</span>
-                        </div>
-                        <ul className="list-disc list-inside space-y-2 text-foreground">
-
-                        </ul>
-                    </div>
-
-                </div>
-                <div className="w-full max-w-4xl space-y-8">
-                    <div className="bg-card p-6 rounded-lg shadow-md border">
-                        <div className="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 className="text-xl font-bold text-foreground">EPIC Movement Events Officer</h3>
-                                <p className="text-muted-foreground">Asian Focused Christian Ministry</p>
-                            </div>
-                            <span className="text-sm text-muted-foreground">May 2024 - Current</span>
-                        </div>
-                        <ul className="list-disc list-inside space-y-2 text-foreground">
-
-                        </ul>
-                    </div>
-
-                </div>
-                <div className="w-full max-w-4xl space-y-8">
-                    <div className="bg-card p-6 rounded-lg shadow-md border">
-                        <div className="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 className="text-xl font-bold text-foreground">ACM Media Junior Officer</h3>
-                                <p className="text-muted-foreground">The Association for Computing Machinery</p>
-                            </div>
-                            <span className="text-sm text-muted-foreground">May 2024 - Current</span>
-                        </div>
-                        <ul className="list-disc list-inside space-y-2 text-foreground">
-
-                        </ul>
-                    </div>
-
-                </div>
-            </section>
-        </DefaultLayout>
-    );
+              </FadeIn>
+            );
+          })}
+        </div>
+      </section>
+    </DefaultLayout>
+  );
 }

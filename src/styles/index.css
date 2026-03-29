@@ -1,39 +1,182 @@
-.index-page.parent {
-    gap: 25px;
-    margin-top: -20px;
+.hero-section {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  min-height: calc(70vh - 4rem);
+  padding: 2rem 0;
 }
 
-.index-page .div1 {
-    width: 60%;
-    flex-direction: column;
-    display: flex;
-    justify-content: space-between;
-    height: 666px;
+.hero-content {
+  flex: 1;
 }
 
-.index-page .div2 {
-    width: 40%;
-    height: 80%;
-    border-radius: 20dvh;
-    padding-left: 75px;
+.hero-greeting {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hero-name {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.hero-role {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.25rem;
+}
+
+.hero-school {
+  font-size: 1rem;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 1.5rem;
+}
+
+.hero-description p {
+  font-size: 1.05rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-tags {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.hero-tag {
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+  transition: all 0.2s;
+}
+
+.hero-tag:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.dark .hero-tag {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(139, 92, 246, 0.12));
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  color: #93c5fd;
+}
+
+.dark .hero-tag:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.hero-photo {
+  flex-shrink: 0;
+}
+
+.photo-glow {
+  position: relative;
+}
+
+.photo-glow::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+  z-index: 0;
+}
+
+.photo-glow::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+  z-index: -1;
+  filter: blur(24px);
+  opacity: 0.35;
+}
+
+.photo-inner {
+  position: relative;
+  z-index: 1;
+  width: 320px;
+  height: 380px;
+  border-radius: calc(1.5rem - 3px);
+  overflow: hidden;
+  background: hsl(var(--background));
+}
+
+.photo-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-section {
+  padding: 2rem 0 3rem;
+}
+
+.carousel-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: hsl(var(--foreground));
+}
+
+@media (max-width: 1024px) {
+  .hero-section {
+    gap: 3rem;
+  }
+
+  .hero-name {
+    font-size: 2.75rem;
+  }
+
+  .photo-inner {
+    width: 260px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+    min-height: auto;
+    padding-top: 1rem;
+  }
+
+  .hero-name {
+    font-size: 2.5rem;
+  }
+
+  .hero-description p {
+    max-width: 100%;
+  }
+
+  .hero-tags {
     justify-content: center;
-}
+  }
 
-.index-page .photos_div {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 24px;
-    justify-content: center;
-    margin-top: auto;
-    background-color: #172439;
-    border-radius: 20dvh;
-}
-
-.index-page .div1 .photos_div {
-    align-items: end;
-}
-
-.index-page .carousel_div{
-    height: 375px;
+  .photo-inner {
+    width: 220px;
+    height: 260px;
+  }
 }
