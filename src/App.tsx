@@ -8,6 +8,7 @@ import AboutPage from "@/pages/about";
 import OrganizationsPage from "@/pages/organizations";
 import AnimatedRoute from "@/components/AnimatedRoute";
 import GetOnPage from "@/pages/get-on";
+import TimeTillREFinalPage from "@/pages/timeTillREfinal";
 
 function App() {
   return (
@@ -67,7 +68,15 @@ function App() {
               <GetOnPage />
             </AnimatedRoute>
           } 
-          path="/get-on" 
+          path="/get-on"
+        />
+        <Route
+          element={
+            <AnimatedRoute>
+              <TimeTillREFinalPage />
+            </AnimatedRoute>
+          }
+          path="/timeTillREfinal"
         />
       </Routes>
     </div>
