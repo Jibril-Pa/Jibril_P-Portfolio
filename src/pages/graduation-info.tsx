@@ -3,7 +3,7 @@ import DefaultLayout from "@/layouts/default";
 import { motion } from "framer-motion";
 import FadeIn from "@/components/FadeIn";
 
-const CEREMONY_DATE = new Date("2026-05-11T15:00:00");
+const CEREMONY_DATE = new Date("2026-05-16T17:30:00");
 
 function getTimeLeft() {
   const now = new Date();
@@ -71,7 +71,7 @@ export default function GraduationInfoPage() {
             Graduation Info
           </h1>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            UTSA Spring 2026 Commencement — Alamodome
+            UTSA Spring 2026 Commencement — Alamodome — May 16 at 5:30 PM
           </p>
         </motion.div>
 
@@ -116,27 +116,6 @@ export default function GraduationInfoPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </FadeIn>
-
-        {/* Doctoral Hooding */}
-        <FadeIn delay={0.15}>
-          <div className="mb-10 bg-card border rounded-xl p-6 shadow-sm">
-            <h2 className="text-xl font-bold mb-2">Doctoral Hooding Ceremony</h2>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              Doctoral graduates attending the Hooding Ceremony at Main Campus on
-              Thursday, May 14 are limited to four guests. Parking at the adjacent
-              surface lot is free. Doctoral graduates are welcome to attend both the
-              Hooding Ceremony and a ceremony at the Alamodome. For more information,
-              contact{" "}
-              <a
-                href="mailto:Graduate.School@utsa.edu"
-                className="text-blue-500 hover:underline"
-              >
-                Graduate.School@utsa.edu
-              </a>
-              .
-            </p>
           </div>
         </FadeIn>
 
