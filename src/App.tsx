@@ -8,7 +8,7 @@ import AboutPage from "@/pages/about";
 import OrganizationsPage from "@/pages/organizations";
 import AnimatedRoute from "@/components/AnimatedRoute";
 import GetOnPage from "@/pages/get-on";
-import TimeTillREFinalPage from "@/pages/timeTillREfinal";
+import GraduationInfoPage from "@/pages/graduation-info";
 
 function App() {
   return (
@@ -73,10 +73,10 @@ function App() {
         <Route
           element={
             <AnimatedRoute>
-              <TimeTillREFinalPage />
+              <GraduationInfoPage />
             </AnimatedRoute>
           }
-          path="/timeTillREfinal"
+          path="/graduation-info"
         />
       </Routes>
     </div>
