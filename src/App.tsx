@@ -1,94 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 
 import IndexPage from "@/pages/index";
-import ProjectsPage from "@/pages/Projects";
-import ExperiencePage from "@/pages/Experience";
-import BlogPage from "@/pages/Resume";
-import AboutPage from "@/pages/about";
-import OrganizationsPage from "@/pages/organizations";
-import AnimatedRoute from "@/components/AnimatedRoute";
-import GetOnPage from "@/pages/get-on";
-import GraduationInfoPage from "@/pages/graduation-info";
-import TimeTillREFinalPage from "@/pages/timeTillREfinal";
 
 function App() {
   return (
-    <div style={{ position: "relative", width: "100%", height: "100vh", overflow: "auto"}}>
-      <Routes>
-        <Route 
-          element={
-            <AnimatedRoute>
-              <IndexPage />
-            </AnimatedRoute>
-          } 
-          path="/" 
-        />
-        <Route 
-          element={
-            <AnimatedRoute>
-              <ProjectsPage />
-            </AnimatedRoute>
-          } 
-          path="/Projects" 
-        />
-        <Route 
-          element={
-            <AnimatedRoute>
-              <ExperiencePage />
-            </AnimatedRoute>
-          } 
-          path="/Experience" 
-        />
-        <Route 
-          element={
-            <AnimatedRoute>
-              <BlogPage />
-            </AnimatedRoute>
-          } 
-          path="/Resume" 
-        />
-        <Route 
-          element={
-            <AnimatedRoute>
-              <AboutPage />
-            </AnimatedRoute>
-          } 
-          path="/about" 
-        />
-        <Route 
-          element={
-            <AnimatedRoute>
-              <OrganizationsPage />
-            </AnimatedRoute>
-          } 
-          path="/Organizations" 
-        />
-        <Route 
-          element={
-            <AnimatedRoute>
-              <GetOnPage />
-            </AnimatedRoute>
-          } 
-          path="/get-on"
-        />
-        <Route
-          element={
-            <AnimatedRoute>
-              <GraduationInfoPage />
-            </AnimatedRoute>
-          }
-          path="/graduation-info"
-        />
-        <Route
-          element={
-            <AnimatedRoute>
-              <TimeTillREFinalPage />
-            </AnimatedRoute>
-          }
-          path="/timeTillREfinal"
-        />
-      </Routes>
-    </div>
+    <Routes>
+      <Route element={<IndexPage />} path="/" />
+    </Routes>
   );
 }
 
