@@ -1,0 +1,40 @@
+.photo-strip {
+  /* Where the first photo sits: level with the rest of the page content. */
+  --inset: max(var(--gutter), calc(50vw - var(--page-max) / 2));
+  /* Break out of the page column so the row runs to both edges of the window. */
+  margin-inline: calc(50% - 50vw);
+  padding-inline: var(--inset);
+  overflow-x: auto;
+  scroll-padding-inline: var(--inset);
+  scroll-snap-type: x proximity;
+  scrollbar-color: var(--color-ink) transparent;
+  scrollbar-width: thin;
+}
+
+.photo-strip ul {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  padding: 0 0 1.25rem;
+  list-style: none;
+}
+
+.photo {
+  scroll-snap-align: start;
+}
+
+.photo img {
+  width: auto;
+  max-width: none;
+  height: clamp(13rem, 27vw, 20rem);
+}
+
+.photo figcaption {
+  display: flex;
+  gap: 0.625rem;
+  margin-top: 0.625rem;
+}
+
+.photo-index {
+  color: var(--color-spot-ink);
+}

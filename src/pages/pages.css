@@ -1,0 +1,640 @@
+/* Page shell */
+.page {
+  width: min(100% - 2 * var(--gutter), var(--page-max));
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(4rem, 9vw, 7rem);
+}
+
+.page-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: var(--font-medium);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* A square of the spot colour, like a swatch printed in the margin. */
+.page-eyebrow::before {
+  content: "";
+  flex: none;
+  width: 0.625rem;
+  height: 0.625rem;
+  background: var(--color-spot);
+}
+
+.page-title {
+  max-width: 14ch;
+  color: var(--color-ink);
+  font-size: clamp(2.75rem, 8vw, 5.5rem);
+  font-stretch: 78%;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.page-lead {
+  max-width: 52ch;
+  margin-top: 1.5rem;
+  color: var(--color-ink);
+  font-size: clamp(1.125rem, 1.7vw, 1.3125rem);
+  line-height: 1.5;
+}
+
+.page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 2rem;
+}
+
+/* Sections: a heavy rule, the heading in a left-hand column, content on the right. */
+.section {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--grid-gap);
+  margin-top: clamp(3.5rem, 8vw, 6rem);
+  padding-top: 1.5rem;
+  border-top: var(--rule-strong);
+}
+
+.section-head {
+  grid-column: span 4;
+  align-self: start;
+}
+
+.section-body {
+  grid-column: span 8;
+}
+
+.section-title {
+  color: var(--color-ink);
+  font-size: clamp(1.625rem, 2.8vw, 2.125rem);
+  font-stretch: 82%;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.section-note {
+  max-width: 30ch;
+  margin-top: 0.75rem;
+}
+
+/* Wide sections put the heading on its own row so the content can use every column. */
+.section-wide .section-head,
+.section-wide .section-body {
+  grid-column: 1 / -1;
+}
+
+.section-wide .section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.section-wide .section-note,
+.section-wide .section-head .section-more {
+  max-width: none;
+  margin-top: 0;
+}
+
+.section-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1.75rem;
+}
+
+.section-more .arrow {
+  transition: transform 150ms ease;
+}
+
+.section-more:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* Home: hero */
+.hero {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.hero-name {
+  color: var(--color-ink);
+  font-size: clamp(4.5rem, 29vw, 15rem);
+  font-stretch: 75%;
+  font-weight: 800;
+  line-height: 0.84;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.hero-name span {
+  display: block;
+}
+
+.hero-lead {
+  max-width: 23ch;
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  color: var(--color-ink);
+  font-size: clamp(1.625rem, 3.1vw, 2.375rem);
+  font-stretch: 88%;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.hero-body {
+  max-width: 50ch;
+  margin-top: 1.25rem;
+  font-size: 1.125rem;
+}
+
+/* The pen loop around one word of the lead. Drawn once on load. */
+.scribble {
+  position: relative;
+  white-space: nowrap;
+}
+
+.scribble svg {
+  position: absolute;
+  top: -0.08em;
+  left: -0.22em;
+  width: calc(100% + 0.44em);
+  height: calc(100% + 0.2em);
+  overflow: visible;
+  pointer-events: none;
+}
+
+.scribble path {
+  fill: none;
+  stroke: var(--color-spot);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: scribble-draw 650ms 400ms ease-out forwards;
+}
+
+@keyframes scribble-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.hero-photo {
+  --bleed: 18px;
+  max-width: 26rem;
+}
+
+.hero-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.hero-photo figcaption {
+  padding-left: var(--bleed);
+}
+
+/* Printer's crop marks: a short tick either side of each corner, set off from the image. */
+.crop-marks {
+  --mark: 12px;
+  --tick: linear-gradient(var(--color-ink), var(--color-ink));
+  padding: var(--bleed);
+  background:
+    var(--tick) left 0 top var(--bleed) / var(--mark) 1px,
+    var(--tick) left var(--bleed) top 0 / 1px var(--mark),
+    var(--tick) right 0 top var(--bleed) / var(--mark) 1px,
+    var(--tick) right var(--bleed) top 0 / 1px var(--mark),
+    var(--tick) left 0 bottom var(--bleed) / var(--mark) 1px,
+    var(--tick) left var(--bleed) bottom 0 / 1px var(--mark),
+    var(--tick) right 0 bottom var(--bleed) / var(--mark) 1px,
+    var(--tick) right var(--bleed) bottom 0 / 1px var(--mark);
+  background-repeat: no-repeat;
+}
+
+/* Home: three facts in a ruled strip */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: clamp(3rem, 7vw, 5rem);
+  border-block: var(--rule-strong);
+}
+
+.fact {
+  padding: 1.125rem 1.5rem 1.375rem;
+  border-left: var(--rule-light);
+}
+
+.fact:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.fact dt {
+  color: var(--color-ink-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+
+.fact dd {
+  margin-top: 0.5rem;
+  color: var(--color-ink);
+  font-size: 1.125rem;
+  font-weight: var(--font-medium);
+  line-height: 1.35;
+}
+
+.fact dd .meta {
+  display: block;
+  margin-top: 0.25rem;
+  font-weight: 400;
+}
+
+/* Home: the short version of the experience list */
+.brief {
+  padding: 0;
+  list-style: none;
+}
+
+.brief li {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.25rem 1.5rem;
+  align-items: baseline;
+  padding: 0.875rem 0;
+  border-bottom: var(--rule-light);
+}
+
+.brief li:first-child {
+  padding-top: 0;
+}
+
+.brief-title {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+/* Work: experience */
+.roles {
+  padding: 0;
+  list-style: none;
+}
+
+.role {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 0.5rem 1.5rem;
+  padding: 2rem 0;
+  border-top: var(--rule-light);
+}
+
+.role:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.role:last-child {
+  padding-bottom: 0;
+}
+
+.role-meta {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.3rem;
+}
+
+.role-title {
+  color: var(--color-ink);
+  font-size: 1.375rem;
+  font-stretch: 88%;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.role-org {
+  color: var(--color-ink);
+  font-weight: var(--font-medium);
+}
+
+.role-summary {
+  max-width: 60ch;
+  margin-top: 0.75rem;
+}
+
+.role-points {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 60ch;
+  margin-top: 0.875rem;
+  padding: 0;
+  list-style: none;
+}
+
+.role-points li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.role-points li::before {
+  content: "";
+  position: absolute;
+  top: 0.66em;
+  left: 0;
+  width: 0.375rem;
+  height: 0.375rem;
+  background: var(--color-spot);
+}
+
+.role-tools {
+  max-width: 60ch;
+  margin-top: 1rem;
+}
+
+/* About */
+.bio {
+  display: grid;
+  gap: 1.125rem;
+  max-width: 58ch;
+}
+
+.bio p:first-child {
+  color: var(--color-ink);
+  font-size: clamp(1.3125rem, 2.3vw, 1.625rem);
+  font-stretch: 92%;
+  font-weight: var(--font-medium);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.school-name {
+  color: var(--color-ink);
+  font-size: 1.375rem;
+  font-stretch: 88%;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.school-degree {
+  color: var(--color-ink);
+  font-weight: var(--font-medium);
+}
+
+.coursework {
+  max-width: 60ch;
+  margin-top: 1rem;
+}
+
+.orgs {
+  padding: 0;
+  list-style: none;
+}
+
+.orgs li {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--grid-gap);
+  align-items: baseline;
+  padding: 0.875rem 0;
+  border-bottom: var(--rule-light);
+}
+
+.orgs li:first-child {
+  border-top: var(--rule-light);
+}
+
+.org-name {
+  grid-column: span 4;
+  color: var(--color-ink);
+  font-size: 1.25rem;
+  font-stretch: 88%;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.org-role {
+  grid-column: span 3;
+  color: var(--color-ink);
+  font-weight: var(--font-medium);
+}
+
+.org-note {
+  grid-column: span 5;
+}
+
+.orgs + .photo-strip {
+  margin-top: 2.5rem;
+}
+
+.toolbox {
+  display: grid;
+}
+
+.toolbox div {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 0.25rem 1.5rem;
+  align-items: baseline;
+  padding: 0.875rem 0;
+  border-bottom: var(--rule-light);
+}
+
+.toolbox div:first-child {
+  padding-top: 0;
+}
+
+.toolbox dd {
+  color: var(--color-ink);
+}
+
+/* Contact */
+.contact-email {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  padding: clamp(1.5rem, 4vw, 2.5rem) 0;
+  border-block: var(--rule-strong);
+}
+
+.contact-address {
+  color: var(--color-ink);
+  font-size: clamp(1.5rem, 9.6vw, 4.5rem);
+  font-stretch: 78%;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  /* A border instead of an underline: underlines break around the j, p and g. */
+  border-bottom: 0.07em solid var(--color-spot);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: background-color 150ms ease;
+}
+
+.contact-address:hover {
+  background: var(--color-spot);
+}
+
+.link-rows {
+  padding: 0;
+  list-style: none;
+}
+
+.link-rows a {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 1.125rem 0;
+  border-bottom: var(--rule-light);
+  color: var(--color-ink);
+  text-decoration: none;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    padding 150ms ease;
+}
+
+.link-row-label {
+  font-size: 1.25rem;
+  font-stretch: 88%;
+  font-weight: 700;
+}
+
+.link-rows .arrow {
+  align-self: center;
+  color: var(--color-spot-ink);
+}
+
+/* The whole row inverts, the way a selected line does in a file list. */
+.link-rows a:hover {
+  padding-inline: 0.875rem;
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.link-rows a:hover .meta {
+  color: inherit;
+}
+
+.link-rows a:hover .arrow {
+  color: var(--color-spot);
+}
+
+.contact-note {
+  margin-top: 1.5rem;
+}
+
+/* 404 */
+.not-found-path {
+  margin-top: 1.5rem;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 901px) {
+  .hero {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+  }
+
+  .hero-name {
+    font-size: clamp(6rem, 17vw, 15rem);
+  }
+
+  .hero-photo {
+    max-width: none;
+  }
+
+  /* Long sections keep their heading in view while the content scrolls past. */
+  .section:not(.section-wide) .section-head {
+    position: sticky;
+    top: 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .section-head,
+  .section-body {
+    grid-column: 1 / -1;
+  }
+
+  .section-head {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-note {
+    max-width: none;
+  }
+
+  .orgs li {
+    display: block;
+  }
+
+  .org-name,
+  .org-role {
+    display: inline;
+  }
+
+  .org-role::before {
+    content: " · ";
+  }
+
+  .org-note {
+    display: block;
+    margin-top: 0.125rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .facts {
+    grid-template-columns: 1fr;
+  }
+
+  .fact {
+    padding-inline: 0;
+    border-top: var(--rule-light);
+    border-left: 0;
+  }
+
+  .fact:first-child {
+    border-top: 0;
+  }
+
+  .brief li,
+  .role,
+  .toolbox div {
+    grid-template-columns: 1fr;
+  }
+
+  .role-meta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0 1rem;
+    padding-top: 0;
+  }
+
+  .link-rows a {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .link-rows .meta {
+    grid-row: 2;
+    grid-column: 1;
+    margin-top: -0.75rem;
+  }
+}

@@ -1,17 +1,138 @@
 :root {
-  color-scheme: light dark;
+  /* Ink and paper */
+  --color-paper: #f3f4f6;
+  --color-ink: #0c1f3f;
+  --color-ink-soft: #33405e;
+  --color-ink-muted: #5c6884;
+  --color-rule: rgb(12 31 63 / 0.16);
+
+  /* Spot colour. Orange on navy is borrowed from UTSA. */
+  --color-spot: #f15a22;
+  /* The spot colour is too light for small text on paper; this one passes AA. */
+  --color-spot-ink: #b8400f;
+
+  --color-text: var(--color-ink-soft);
+  --color-background: var(--color-paper);
+
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-medium: 500;
+
+  /* Layout */
+  --page-max: 1216px;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --grid-gap: clamp(1.25rem, 2.5vw, 2rem);
+  --rule-strong: 1.5px solid var(--color-ink);
+  --rule-light: 1px solid var(--color-rule);
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1.5rem;
 }
 
 body {
-  margin: 0;
   min-height: 100vh;
-  font-family: system-ui, sans-serif;
+  /* The photo strip bleeds to the viewport edge; this keeps it from adding a scrollbar. */
+  overflow-x: clip;
+  color: var(--color-text);
+  background: var(--color-background);
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-spot);
+  outline-offset: 3px;
+}
+
+::selection {
+  color: var(--color-ink);
+  background: var(--color-spot);
+}
+
+/* Small monospace captions: dates, tool lists, photo captions. */
+.meta {
+  color: var(--color-ink-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+/* Inline links inside running text. */
+.text-link {
+  color: var(--color-ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--color-spot);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
+  transition:
+    background-color 150ms ease,
+    text-decoration-color 150ms ease;
+}
+
+.text-link:hover {
+  background: var(--color-spot);
+  text-decoration-color: transparent;
+}
+
+/* Keyboard users can jump past the nav. */
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 20;
+  padding: 0.5rem 0.875rem;
+  color: var(--color-paper);
+  background: var(--color-ink);
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

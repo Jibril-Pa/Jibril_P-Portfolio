@@ -1,0 +1,73 @@
+/* Rows alternate 7 + 5 and 5 + 7 columns so the grid never settles into equal boxes. */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(2.5rem, 5vw, 4rem) var(--grid-gap);
+}
+
+.project {
+  grid-column: span 5;
+}
+
+.project-wide {
+  grid-column: span 7;
+}
+
+/* One height for every frame keeps the pair in a row level; the screenshot is cropped to fit. */
+.project-media {
+  height: clamp(15rem, 31vw, 25rem);
+  overflow: hidden;
+  border: 1px solid var(--color-ink);
+  background: var(--color-ink);
+}
+
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.125rem;
+}
+
+.project-title {
+  color: var(--color-ink);
+  font-size: clamp(1.5rem, 2.4vw, 1.875rem);
+  font-stretch: 82%;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.project-text {
+  max-width: 58ch;
+  margin-top: 0.625rem;
+}
+
+.project-stack {
+  margin-top: 0.875rem;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0.875rem;
+}
+
+@media (max-width: 760px) {
+  .project,
+  .project-wide {
+    grid-column: 1 / -1;
+  }
+
+  .project-media {
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+}

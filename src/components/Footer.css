@@ -1,0 +1,104 @@
+.footer {
+  width: min(100% - 2 * var(--gutter), var(--page-max));
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.footer-cta {
+  padding: clamp(2rem, 5vw, 3.5rem) 0 clamp(2.5rem, 6vw, 4rem);
+  border-top: var(--rule-strong);
+}
+
+.footer-email {
+  color: var(--color-ink);
+  font-size: clamp(1.5rem, 9.6vw, 5rem);
+  font-stretch: 78%;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  /* A border instead of an underline: underlines break around the j, p and g. */
+  border-bottom: 0.07em solid var(--color-spot);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: background-color 150ms ease;
+}
+
+.footer-email:hover {
+  background: var(--color-spot);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 2rem var(--grid-gap);
+  padding: 2rem 0 2.5rem;
+  border-top: var(--rule-strong);
+}
+
+.footer-brand {
+  display: grid;
+  grid-column: span 6;
+  gap: 0.75rem;
+  align-content: start;
+  justify-items: start;
+}
+
+.footer-top nav,
+.footer-top nav + div {
+  grid-column: span 3;
+}
+
+.footer-heading {
+  margin-bottom: 0.625rem;
+  color: var(--color-ink-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 400;
+}
+
+.footer-top ul {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-top li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-ink);
+  font-weight: var(--font-medium);
+  text-decoration: none;
+}
+
+.footer-top li a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--color-spot);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
+}
+
+.footer-top .arrow {
+  color: var(--color-spot-ink);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 2rem;
+  padding-top: 1.25rem;
+  border-top: var(--rule-light);
+}
+
+@media (max-width: 640px) {
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-top nav,
+  .footer-top nav + div {
+    grid-column: span 6;
+  }
+}
